@@ -51,8 +51,9 @@ All tested, all measured, all real-world.
 ## Contact
 
 - **Twitter/X**: [@youngbasilik](https://x.com/youngbasilik)
-- **Email**: youngbasilik@gmail.com
 - **GitHub**: [JoeMatt](https://github.com/JoeMatt)
+
+*For inquiries, reach out via Twitter DM.*
 
 ---
 
