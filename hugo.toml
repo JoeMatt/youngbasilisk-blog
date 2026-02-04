@@ -35,7 +35,6 @@ twitter = "youngbasilik"
 # Author Info
 [params.author]
 name = "YoungBasilik"
-email = "youngbasilik@gmail.com"
 
 # Schema.org structured data
 [params.schema]
@@ -80,10 +79,6 @@ url = "https://x.com/youngbasilik"
 [[params.socialIcons]]
 name = "github"
 url = "https://github.com/JoeMatt"
-
-[[params.socialIcons]]
-name = "email"
-url = "mailto:youngbasilik@gmail.com"
 
 [params.analytics.google]
 SiteVerificationTag = ""
