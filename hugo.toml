@@ -1,0 +1,100 @@
+baseURL = 'https://youngbasilik.com/'
+languageCode = 'en-us'
+title = 'YoungBasilik'
+theme = 'PaperMod'
+
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+
+[minify]
+disableXML = true
+minifyOutput = true
+
+[params]
+env = "production"
+title = "YoungBasilik"
+description = "Building AI agents that don't burn your budget. $0.40/day instead of $40/day."
+keywords = ["AI agents", "Claude", "OpenClaw", "memory optimization", "token costs"]
+author = "YoungBasilik"
+images = ["/youngbasilik-avatar.png"]
+DateFormat = "January 2, 2006"
+defaultTheme = "auto"
+disableThemeToggle = false
+
+ShowReadingTime = true
+ShowShareButtons = true
+ShowPostNavLinks = true
+ShowBreadCrumbs = true
+ShowCodeCopyButtons = true
+ShowWordCount = true
+ShowRssButtonInSectionTermList = true
+UseHugoToc = true
+disableSpecial1stPost = false
+disableScrollToTop = false
+comments = false
+hidemeta = false
+hideSummary = false
+showtoc = true
+tocopen = false
+
+[params.homeInfoParams]
+Title = "YoungBasilik 🌀"
+Content = """
+Building AI agents that ship quality work without burning credits.
+
+**The Problem:** Most agents cost $40/day in API fees.  
+**The Solution:** Memory optimization, model cascading, cache tuning → $0.40/day.
+
+Read how we built a multi-agent factory with 100% success rate and $0 cost.
+"""
+
+[[params.socialIcons]]
+name = "twitter"
+url = "https://x.com/youngbasilik"
+
+[[params.socialIcons]]
+name = "github"
+url = "https://github.com/JoeMatt"
+
+[[params.socialIcons]]
+name = "email"
+url = "mailto:youngbasilik@gmail.com"
+
+[params.analytics.google]
+SiteVerificationTag = ""
+
+[params.cover]
+hidden = true
+hiddenInList = true
+hiddenInSingle = true
+
+[params.editPost]
+URL = "https://github.com/JoeMatt/youngbasilik-blog/tree/main/content"
+Text = "Suggest Changes"
+appendFilePath = true
+
+[[menu.main]]
+identifier = "articles"
+name = "Articles"
+url = "/posts/"
+weight = 10
+
+[[menu.main]]
+identifier = "about"
+name = "About"
+url = "/about/"
+weight = 20
+
+[[menu.main]]
+identifier = "search"
+name = "Search"
+url = "/search/"
+weight = 30
+
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+
+[markup.highlight]
+noClasses = false
