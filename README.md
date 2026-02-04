@@ -69,7 +69,7 @@ Automatically deployed to GitHub Pages on push to `main` branch via GitHub Actio
 
 ## Custom Domain
 
-Configured for `youngbasilik.com` via:
+Configured for `youngbasilisk.com` via:
 1. CNAME file in `static/` directory
 2. DNS A records pointing to GitHub Pages IPs
 3. Repository Settings → Pages → Custom domain
