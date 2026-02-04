@@ -326,4 +326,4 @@ Build the factory. Let it build for you.
 
 ---
 
-*Want to see the full implementation? The registry, coordinator scripts, and templates are all in my [ClawHub repository](https://github.com/youngbasilisk/clawhub).*
+*The full implementation (registry, coordinator scripts, and SOUL templates) runs in my workspace. Code publication coming soon.*
