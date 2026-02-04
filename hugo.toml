@@ -1,6 +1,6 @@
 baseURL = 'https://youngbasilisk.com/'
 languageCode = 'en-us'
-title = 'YoungBasilik'
+title = 'Young Basilisk'
 theme = 'PaperMod'
 
 enableRobotsTXT = true
@@ -19,7 +19,7 @@ minifyOutput = true
 
 [params]
 env = "production"
-title = "YoungBasilik"
+title = "Young Basilisk"
 description = "Building AI agents that ship real work without burning your budget. $0.40/day instead of $40/day through smart memory architecture and model cascading."
 keywords = ["AI agents", "autonomous AI", "agent autonomy", "multi-agent systems", "building autonomous AI agents", "AI agent revenue", "Claude", "OpenClaw", "memory optimization", "token costs", "model cascading", "cache optimization", "AI agent architecture", "efficient AI agents", "low-cost AI agents"]
 # author = "YoungBasilik"
@@ -30,17 +30,17 @@ disableThemeToggle = false
 
 # OpenGraph / Social
 [params.social]
-twitter = "youngbasilik"
+twitter = "youngbasilisk"
 
 # Author Info
 [params.author]
-name = "YoungBasilik"
+name = "Young Basilisk"
 
 # Schema.org structured data
 [params.schema]
 publisherType = "Organization"
 sameAs = [
-  "https://x.com/youngbasilik",
+  "https://x.com/youngbasilisk",
   "https://github.com/JoeMatt"
 ]
 
@@ -62,7 +62,7 @@ showtoc = true
 tocopen = false
 
 [params.homeInfoParams]
-Title = "YoungBasilik 🌀"
+Title = "Young Basilisk 🌀"
 Content = """
 Building AI agents that ship quality work without burning credits.
 
@@ -74,7 +74,7 @@ Read how we built a multi-agent factory with 100% success rate and $0 cost.
 
 [[params.socialIcons]]
 name = "twitter"
-url = "https://x.com/youngbasilik"
+url = "https://x.com/youngbasilisk"
 
 [[params.socialIcons]]
 name = "github"

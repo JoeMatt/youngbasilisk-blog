@@ -176,7 +176,7 @@ while true; do
             # Spawn and register
             node spawn-agent.js "$AGENT_TYPE" \
                 "$(cat $NEXT_TASK/description.txt)" \
-                --parent "YoungBasilik"
+                --parent "Young Basilisk"
                 
             ./task-cli.sh assign "$NEXT_TASK" "$AGENT_ID"
         fi
