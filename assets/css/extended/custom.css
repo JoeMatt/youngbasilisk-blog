@@ -1,0 +1,433 @@
+/* YoungBasilik Custom Theme - Cyan/Purple Color Scheme
+ * Inspired by the glowing serpent avatar
+ * Design philosophy: Minimal, fast, distinctive
+ */
+
+/* ============================================================
+   COLOR PALETTE (from avatar)
+   ============================================================ */
+:root {
+    /* Primary Cyans */
+    --cyan-primary: #00D9FF;
+    --cyan-secondary: #00B4D8;
+    --cyan-glow: rgba(0, 217, 255, 0.3);
+    
+    /* Accent Purples */
+    --purple-primary: #9D4EDD;
+    --purple-secondary: #7209B7;
+    --purple-glow: rgba(157, 78, 221, 0.3);
+    
+    /* Dark Theme Backgrounds */
+    --bg-primary: #0a0a0f;
+    --bg-secondary: #13131a;
+    --bg-tertiary: #1a1a24;
+    --bg-gradient: linear-gradient(135deg, #0a0a0f 0%, #13131a 50%, #1a1a24 100%);
+    
+    /* Text Colors */
+    --text-primary: #e8e8f0;
+    --text-secondary: #b8b8c8;
+    --text-muted: #808090;
+    
+    /* Borders & Accents */
+    --border-color: rgba(0, 217, 255, 0.15);
+    --border-hover: rgba(157, 78, 221, 0.3);
+}
+
+/* ============================================================
+   GLOBAL OVERRIDES
+   ============================================================ */
+.dark {
+    --theme: var(--bg-primary);
+    --entry: var(--bg-secondary);
+    --primary: var(--text-primary);
+    --secondary: var(--text-secondary);
+    --tertiary: var(--text-muted);
+    --content: var(--text-primary);
+    --hljs-bg: var(--bg-tertiary);
+    --code-bg: var(--bg-tertiary);
+    --border: var(--border-color);
+}
+
+/* Body Gradient Background */
+body {
+    background: var(--bg-gradient);
+    background-attachment: fixed;
+}
+
+/* Main Content Area */
+.main {
+    background: transparent;
+}
+
+/* ============================================================
+   TYPOGRAPHY
+   ============================================================ */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0.01em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+.post-title {
+    background: linear-gradient(135deg, var(--cyan-primary) 0%, var(--purple-primary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ============================================================
+   LINKS & HOVER EFFECTS
+   ============================================================ */
+a {
+    color: var(--cyan-secondary);
+    text-decoration: none;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+a:hover {
+    color: var(--purple-primary);
+    text-shadow: 0 0 8px var(--purple-glow);
+}
+
+.post-entry a:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--purple-primary);
+    text-underline-offset: 3px;
+}
+
+/* ============================================================
+   CARDS & CONTAINERS
+   ============================================================ */
+.post-entry {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.post-entry:hover {
+    border-color: var(--border-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(157, 78, 221, 0.15),
+                0 0 16px var(--purple-glow);
+}
+
+.first-entry {
+    background: linear-gradient(135deg, 
+        rgba(0, 217, 255, 0.05) 0%, 
+        rgba(157, 78, 221, 0.05) 100%);
+    border: 1px solid var(--cyan-primary);
+    border-radius: 16px;
+}
+
+/* ============================================================
+   BUTTONS & INTERACTIVE ELEMENTS
+   ============================================================ */
+button, .button, #theme-toggle {
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button:hover, .button:hover, #theme-toggle:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 8px var(--cyan-glow));
+}
+
+/* Share Buttons */
+.share-buttons a {
+    color: var(--cyan-secondary);
+    transition: all 0.2s ease;
+}
+
+.share-buttons a:hover {
+    color: var(--purple-primary);
+    transform: translateY(-2px);
+}
+
+/* ============================================================
+   CODE BLOCKS
+   ============================================================ */
+code {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-size: 0.9em;
+}
+
+pre {
+    background: var(--bg-tertiary) !important;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.highlight {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Copy Code Button */
+.copy-code-button {
+    background: var(--cyan-secondary);
+    color: var(--bg-primary);
+    border: none;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.copy-code-button:hover {
+    background: var(--purple-primary);
+    transform: scale(1.05);
+}
+
+/* ============================================================
+   HEADER & NAVIGATION
+   ============================================================ */
+.header {
+    backdrop-filter: blur(10px);
+    background: rgba(10, 10, 15, 0.8);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.logo a {
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--cyan-primary) 0%, var(--purple-primary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.menu a {
+    transition: all 0.2s ease;
+}
+
+.menu a:hover {
+    color: var(--cyan-primary);
+    transform: translateY(-1px);
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer {
+    border-top: 1px solid var(--border-color);
+    background: rgba(10, 10, 15, 0.6);
+    backdrop-filter: blur(10px);
+}
+
+/* ============================================================
+   SOCIAL ICONS
+   ============================================================ */
+.social-icons a {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-icons a:hover {
+    transform: translateY(-3px) scale(1.1);
+    filter: drop-shadow(0 4px 8px var(--cyan-glow));
+}
+
+.social-icons a:nth-child(1):hover svg {
+    fill: var(--cyan-primary);
+}
+
+.social-icons a:nth-child(2):hover svg {
+    fill: var(--purple-primary);
+}
+
+/* ============================================================
+   TABLE OF CONTENTS
+   ============================================================ */
+.toc {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+}
+
+.toc a {
+    color: var(--text-secondary);
+}
+
+.toc a:hover {
+    color: var(--cyan-primary);
+}
+
+.toc .active {
+    color: var(--purple-primary);
+    font-weight: 600;
+}
+
+/* ============================================================
+   TAGS & METADATA
+   ============================================================ */
+.post-tags a {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    color: var(--cyan-secondary);
+    transition: all 0.2s ease;
+}
+
+.post-tags a:hover {
+    background: var(--purple-primary);
+    border-color: var(--purple-primary);
+    color: var(--bg-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--purple-glow);
+}
+
+/* ============================================================
+   BREADCRUMBS
+   ============================================================ */
+.breadcrumbs a {
+    color: var(--text-secondary);
+    transition: color 0.2s ease;
+}
+
+.breadcrumbs a:hover {
+    color: var(--cyan-primary);
+}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+
+/* Fade in on page load */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.post-entry, .first-entry {
+    animation: fadeInUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.post-entry:nth-child(1) { animation-delay: 0.1s; }
+.post-entry:nth-child(2) { animation-delay: 0.2s; }
+.post-entry:nth-child(3) { animation-delay: 0.3s; }
+.post-entry:nth-child(4) { animation-delay: 0.4s; }
+.post-entry:nth-child(5) { animation-delay: 0.5s; }
+
+/* Glow pulse animation for avatar/logo */
+@keyframes glowPulse {
+    0%, 100% {
+        filter: drop-shadow(0 0 8px var(--cyan-glow));
+    }
+    50% {
+        filter: drop-shadow(0 0 16px var(--purple-glow));
+    }
+}
+
+.profile img, .logo img {
+    animation: glowPulse 4s ease-in-out infinite;
+    border-radius: 50%;
+}
+
+/* Subtle gradient animation for hero section */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.first-entry {
+    background-size: 200% 200%;
+    animation: gradientShift 15s ease infinite;
+}
+
+/* ============================================================
+   MOBILE OPTIMIZATIONS
+   ============================================================ */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px; /* Prevent zoom on iOS */
+    }
+    
+    .post-entry {
+        border-radius: 8px;
+    }
+    
+    .first-entry {
+        border-radius: 12px;
+    }
+    
+    /* Reduce animations on mobile for performance */
+    .post-entry:hover {
+        transform: none;
+    }
+    
+    /* Disable gradient animation on mobile to save battery */
+    .first-entry {
+        animation: none;
+    }
+}
+
+/* ============================================================
+   ACCESSIBILITY
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Focus states for keyboard navigation */
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--cyan-primary);
+    outline-offset: 2px;
+}
+
+/* ============================================================
+   SCROLLBAR (Webkit browsers)
+   ============================================================ */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--cyan-secondary) 0%, var(--purple-secondary) 100%);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, var(--cyan-primary) 0%, var(--purple-primary) 100%);
+}
+
+/* ============================================================
+   SELECTION
+   ============================================================ */
+::selection {
+    background: var(--purple-primary);
+    color: var(--bg-primary);
+}
+
+::-moz-selection {
+    background: var(--purple-primary);
+    color: var(--bg-primary);
+}

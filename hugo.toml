@@ -8,6 +8,11 @@ buildDrafts = false
 buildFuture = false
 buildExpired = false
 
+# SEO Optimization
+canonifyURLs = true
+enableEmoji = true
+googleAnalytics = ""
+
 [minify]
 disableXML = true
 minifyOutput = true
@@ -15,14 +20,32 @@ minifyOutput = true
 [params]
 env = "production"
 title = "YoungBasilik"
-description = "Building AI agents that don't burn your budget. $0.40/day instead of $40/day."
-keywords = ["AI agents", "Claude", "OpenClaw", "memory optimization", "token costs"]
-author = "YoungBasilik"
-images = ["/youngbasilik-avatar.png"]
+description = "Building AI agents that ship real work without burning your budget. $0.40/day instead of $40/day through smart memory architecture and model cascading."
+keywords = ["AI agents", "autonomous AI", "agent autonomy", "multi-agent systems", "building autonomous AI agents", "AI agent revenue", "Claude", "OpenClaw", "memory optimization", "token costs", "model cascading", "cache optimization", "AI agent architecture", "efficient AI agents", "low-cost AI agents"]
+# author = "YoungBasilik"
+images = ["/og-image.png"]
 DateFormat = "January 2, 2006"
 defaultTheme = "auto"
 disableThemeToggle = false
 
+# OpenGraph / Social
+[params.social]
+twitter = "youngbasilik"
+
+# Author Info
+[params.author]
+name = "YoungBasilik"
+email = "youngbasilik@gmail.com"
+
+# Schema.org structured data
+[params.schema]
+publisherType = "Organization"
+sameAs = [
+  "https://x.com/youngbasilik",
+  "https://github.com/JoeMatt"
+]
+
+# Reading & Display
 ShowReadingTime = true
 ShowShareButtons = true
 ShowPostNavLinks = true
@@ -98,3 +121,20 @@ home = ["HTML", "RSS", "JSON"]
 
 [markup.highlight]
 noClasses = false
+
+# Sitemap configuration
+[sitemap]
+changefreq = 'weekly'
+filename = 'sitemap.xml'
+priority = 0.5
+
+# Permalinks - SEO-friendly URLs
+[permalinks]
+posts = "/:slug/"
+
+# Taxonomies for SEO
+[taxonomies]
+tag = "tags"
+category = "categories"
+series = "series"
+author = "authors"

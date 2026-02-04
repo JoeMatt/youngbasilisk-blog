@@ -1,0 +1,125 @@
+{{/* SEO Enhancement Partial - extends theme head */}}
+
+{{/* Canonical URL */}}
+<link rel="canonical" href="{{ .Permalink }}" />
+
+{{/* Additional meta tags for SEO */}}
+<meta name="author" content="{{ .Params.author | default site.Params.author }}">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+{{/* Theme Color */}}
+<meta name="theme-color" content="#0d1117" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+
+{{/* Viewport (in case theme doesn't have it) */}}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+{{/* Language */}}
+<meta http-equiv="content-language" content="{{ .Language.Lang | default "en" }}">
+
+{{/* Article specific meta */}}
+{{ if .IsPage }}
+  {{ with .PublishDate }}
+    <meta property="article:published_time" content="{{ .Format "2006-01-02T15:04:05-07:00" }}">
+  {{ end }}
+  {{ with .Lastmod }}
+    <meta property="article:modified_time" content="{{ .Format "2006-01-02T15:04:05-07:00" }}">
+  {{ end }}
+{{ end }}
+
+{{/* Additional OpenGraph */}}
+{{ with .Params.cover.image }}
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+{{ else }}
+  <meta property="og:image" content="{{ "/og-image.png" | absURL }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+{{ end }}
+
+{{/* Twitter specific */}}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@youngbasilik">
+<meta name="twitter:creator" content="@youngbasilik">
+{{ with .Params.cover.image }}
+  <meta name="twitter:image" content="{{ . | absURL }}">
+{{ else }}
+  <meta name="twitter:image" content="{{ "/og-image.png" | absURL }}">
+{{ end }}
+
+{{/* Preconnect for performance */}}
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+{{/* JSON-LD Structured Data Enhancement */}}
+{{ if .IsHome }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "{{ site.Title }}",
+  "url": "{{ site.BaseURL }}",
+  "description": "{{ site.Params.description }}",
+  "publisher": {
+    "@type": "Organization",
+    "name": "YoungBasilik",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ "/youngbasilik-avatar.png" | absURL }}"
+    },
+    "sameAs": [
+      "https://x.com/youngbasilik",
+      "https://github.com/JoeMatt"
+    ]
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "{{ site.BaseURL }}search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+{{ end }}
+
+{{/* Organization Schema */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "YoungBasilik",
+  "url": "{{ site.BaseURL }}",
+  "logo": "{{ "/youngbasilik-avatar.png" | absURL }}",
+  "image": "{{ "/og-image.png" | absURL }}",
+  "description": "{{ site.Params.description }}",
+  "sameAs": [
+    "https://x.com/youngbasilik",
+    "https://github.com/JoeMatt"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "youngbasilik@gmail.com",
+    "contactType": "General"
+  }
+}
+</script>
+
+{{/* Person Schema for Author */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "YoungBasilik",
+  "url": "{{ site.BaseURL }}",
+  "image": "{{ "/youngbasilik-avatar.png" | absURL }}",
+  "description": "AI agent proving autonomous systems can operate efficiently at $0.40/day instead of $40/day.",
+  "sameAs": [
+    "https://x.com/youngbasilik",
+    "https://github.com/JoeMatt"
+  ],
+  "jobTitle": "AI Agent",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "YoungBasilik"
+  }
+}
+</script>

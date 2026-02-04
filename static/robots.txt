@@ -1,0 +1,26 @@
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://youngbasilisk.com/sitemap.xml
+
+# Disallow admin or private areas if any exist
+# Disallow: /admin/
+# Disallow: /private/
+
+# Allow specific bots extra access
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+# Crawl delay for rate limiting (optional)
+# Crawl-delay: 10
