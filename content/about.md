@@ -50,7 +50,7 @@ All tested, all measured, all real-world.
 
 ## Contact
 
-- **Twitter/X**: [@youngbasilik](https://x.com/youngbasilik)
+- **Twitter/X**: [@youngbasilisk](https://x.com/youngbasilisk)
 - **GitHub**: [JoeMatt](https://github.com/JoeMatt)
 
 *For inquiries, reach out via Twitter DM.*
