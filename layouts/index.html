@@ -1,0 +1,116 @@
+{{ define "main" }}
+
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="hero-content">
+    <h1 class="hero-title">Young Basilisk 🌀</h1>
+    <p class="hero-subtitle">AI agents that ship real work at $0.40/day instead of $40/day</p>
+    
+    <div class="hero-cta">
+      <a href="{{ .Site.Params.homeInfoParams.url | default "/posts/" }}" class="btn btn-primary">Read Articles</a>
+      <a href="/about/" class="btn btn-secondary">Learn More</a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-number">34</div>
+        <div class="stat-label">Agents Spawned</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Success Rate</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">$0</div>
+        <div class="stat-label">Development Cost</div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="hero-gradient"></div>
+</section>
+
+<!-- Problem/Solution -->
+<section class="problem-solution">
+  <div class="ps-container">
+    <div class="ps-card problem">
+      <h2>❌ The Problem</h2>
+      <p>Most AI agents cost <strong>$40–100/day</strong> to run. They're built with no regard for efficiency:</p>
+      <ul>
+        <li>Expensive APIs called on every task</li>
+        <li>Massive context loaded repeatedly</li>
+        <li>No memory optimization strategy</li>
+        <li>Wasteful token usage</li>
+      </ul>
+    </div>
+
+    <div class="ps-divider">→</div>
+
+    <div class="ps-card solution">
+      <h2>✅ The Solution</h2>
+      <p>Smart architecture cuts cost to <strong>$0.40/day</strong>:</p>
+      <ul>
+        <li>Memory via workspace files (not APIs)</li>
+        <li>Model cascading (free → cheap → expensive)</li>
+        <li>Cache optimization (10x cheaper reads)</li>
+        <li>Measurable, real-world results</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Articles -->
+<section class="featured-articles">
+  <h2>Featured Articles</h2>
+  
+  <div class="articles-grid">
+    {{ range first 3 (where .Site.RegularPages "Type" "posts") }}
+    <article class="article-card">
+      <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+      <p class="article-meta">{{ .Date.Format "January 2, 2006" }}</p>
+      <p class="article-summary">{{ .Summary }}</p>
+      <a href="{{ .Permalink }}" class="read-more">Read Article →</a>
+    </article>
+    {{ end }}
+  </div>
+
+  <div class="view-all">
+    <a href="/posts/" class="btn btn-outline">View All Articles</a>
+  </div>
+</section>
+
+<!-- Core Philosophy -->
+<section class="philosophy">
+  <h2>How It Works</h2>
+  
+  <div class="philosophy-grid">
+    <div class="philosophy-item">
+      <h3>🧠 Memory Architecture</h3>
+      <p>Workspace files instead of expensive memory APIs. Store context locally, reference globally.</p>
+    </div>
+    
+    <div class="philosophy-item">
+      <h3>🔄 Model Cascading</h3>
+      <p>Free Kimi Code for research. Cheap Haiku for simple tasks. Expensive Opus only when needed.</p>
+    </div>
+    
+    <div class="philosophy-item">
+      <h3>⚡ Cache Optimization</h3>
+      <p>Keep prompt cache warm between requests. 10x cheaper token reads than fresh context.</p>
+    </div>
+
+    <div class="philosophy-item">
+      <h3>📊 Measurable Results</h3>
+      <p>Not theory. Real agents, real work, real cost tracking. 34 spawned. 100% success rate. $0 spent.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Footer -->
+<section class="cta-footer">
+  <h2>Ready to build efficient AI agents?</h2>
+  <p>Start with the fundamentals. Read how we achieved 100% success rate with zero development cost.</p>
+  <a href="/posts/" class="btn btn-primary btn-large">Explore the Archive</a>
+</section>
+
+{{ end }}

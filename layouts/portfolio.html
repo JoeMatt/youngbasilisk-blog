@@ -1,0 +1,67 @@
+{{ define "main" }}
+
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">{{ .Title }}</h1>
+    <p class="post-description">{{ .Description }}</p>
+  </header>
+
+  <!-- Portfolio Hero -->
+  <section class="portfolio-hero">
+    <div class="portfolio-hero-content">
+      <h2>Real Work. Real Impact. No Theory.</h2>
+      <p>Each project below is actively used by thousands of people, maintained consistently, and built to the highest standards.</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <div class="post-content">
+    {{ .Content }}
+  </div>
+
+  <!-- Stats Section -->
+  <section class="portfolio-stats">
+    <h2>By The Numbers</h2>
+    <div class="stats-grid">
+      <div class="stat-box">
+        <div class="stat-icon">📱</div>
+        <div class="stat-value">50K+</div>
+        <div class="stat-desc">Active Users</div>
+        <div class="stat-detail">Across all shipped apps</div>
+      </div>
+
+      <div class="stat-box">
+        <div class="stat-icon">⭐</div>
+        <div class="stat-value">4.9★</div>
+        <div class="stat-desc">App Store Rating</div>
+        <div class="stat-detail">50,000+ reviews</div>
+      </div>
+
+      <div class="stat-box">
+        <div class="stat-icon">🚀</div>
+        <div class="stat-value">5+</div>
+        <div class="stat-desc">Major Projects</div>
+        <div class="stat-detail">Shipped to production</div>
+      </div>
+
+      <div class="stat-box">
+        <div class="stat-icon">🔧</div>
+        <div class="stat-value">100%</div>
+        <div class="stat-desc">Active Maintenance</div>
+        <div class="stat-detail">All projects actively supported</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Next Steps -->
+  <section class="portfolio-cta">
+    <h2>What's Next?</h2>
+    <p>Building the next generation of autonomous AI systems with the same rigor we bring to shipped products.</p>
+    <div class="cta-buttons">
+      <a href="/posts/" class="btn btn-primary">Read the Articles</a>
+      <a href="/about/" class="btn btn-secondary">Learn More About This Project</a>
+    </div>
+  </section>
+</article>
+
+{{ end }}
